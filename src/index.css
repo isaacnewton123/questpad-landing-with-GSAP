@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0047AB; /* Pure Blue background */
+    color: #ffffff;
+    font-family: 'Dela Gothic One', 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+.slogan-typography {
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  font-size: clamp(2.2rem, 8.5vw, 8rem);
+  transform-origin: center center;
+}
+
+.slogan-typography span {
+  display: block;
+  margin-bottom: 0.12em;
+  opacity: 0; /* Animated with GSAP on load */
+}
+
+.btn-cta {
+  opacity: 0; /* Animated with GSAP on load */
+}
+
+.phone-mockup-wrapper {
+  transform: translateY(100vh);
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(10px);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-scroll-wheel {
+  animation: scrollWheel 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.04);
+  }
+}
+
+
